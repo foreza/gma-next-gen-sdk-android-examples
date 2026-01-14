@@ -24,8 +24,8 @@ import androidx.annotation.Nullable;
 import com.example.nextgenexample.AdFragment;
 import com.example.nextgenexample.Constant;
 import com.example.nextgenexample.databinding.FragmentCategoryExclusionBinding;
-import com.google.android.gms.ads.AdView;
 import com.google.android.libraries.ads.mobile.sdk.banner.AdSize;
+import com.google.android.libraries.ads.mobile.sdk.banner.AdView;
 import com.google.android.libraries.ads.mobile.sdk.banner.BannerAd;
 import com.google.android.libraries.ads.mobile.sdk.banner.BannerAdEventCallback;
 import com.google.android.libraries.ads.mobile.sdk.banner.BannerAdRefreshCallback;
@@ -54,14 +54,14 @@ public class AdManagerCategoryExclusionFragment
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    loadAd(null, binding.nonExcludedBanner);
+    loadAd(null, binding.noneExcludedBanner);
     loadAd(DOGS_EXCLUSION_KEY, binding.dogsExcludedBanner);
     loadAd(CATS_EXCLUSION_KEY, binding.catsExcludedBanner);
   }
 
   @Override
   public void onDestroyView() {
-    binding.nonExcludedBanner.destroy();
+    binding.noneExcludedBanner.destroy();
     binding.dogsExcludedBanner.destroy();
     binding.catsExcludedBanner.destroy();
     super.onDestroyView();

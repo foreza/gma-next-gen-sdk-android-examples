@@ -31,6 +31,7 @@ import androidx.navigation.Navigation;
 import com.example.nextgenexample.databinding.FragmentMenuBinding;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /** A [Fragment] subclass as the default destination in the navigation. */
 public class MenuFragment extends Fragment {
@@ -110,7 +111,9 @@ public class MenuFragment extends Fragment {
 
     // Set an ArrayAdapter with just the example titles.
     List<String> examplesTitles =
-        examples.stream().map(example -> getResources().getString(example.titleResId)).toList();
+        examples.stream()
+            .map(example -> getResources().getString(example.titleResId))
+            .collect(Collectors.toList());
     binding.listView.setAdapter(
         new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, examplesTitles));
 
