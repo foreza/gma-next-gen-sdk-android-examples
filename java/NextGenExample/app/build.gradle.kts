@@ -38,3 +38,8 @@ dependencies {
   implementation(libs.preference)
   implementation(libs.recyclerview)
 }
+
+configurations.configureEach {
+  exclude(group = "com.google.android.gms", module = "play-services-ads")
+  exclude(group = "com.google.android.gms", module = "play-services-ads-lite")
+}

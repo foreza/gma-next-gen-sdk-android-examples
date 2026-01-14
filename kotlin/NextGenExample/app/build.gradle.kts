@@ -60,3 +60,8 @@ dependencies {
   implementation("androidx.compose.material3:material3")
   debugImplementation("androidx.compose.ui:ui-tooling")
 }
+
+configurations.configureEach {
+  exclude(group = "com.google.android.gms", module = "play-services-ads")
+  exclude(group = "com.google.android.gms", module = "play-services-ads-lite")
+}
